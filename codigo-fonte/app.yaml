@@ -1,0 +1,25 @@
+command:
+  - streamlit
+  - run
+  - app.py
+  - --server.port
+  - "8000"
+  - --server.address
+  - "0.0.0.0"
+
+env:
+  - name: DATABRICKS_HOST
+    value: "<YOUR_WORKSPACE_URL>"
+  - name: LAKEBASE_HOST
+    value: "<YOUR_LAKEBASE_HOST>"
+  - name: LAKEBASE_PG_USER
+    value: "cache_app"
+  - name: LAKEBASE_PG_PASSWORD
+    value: "<YOUR_PASSWORD>"
+  - name: DATABRICKS_APP_URL
+    value: "<YOUR_APP_URL>"
+
+resources:
+  - name: sql-warehouse
+    sql_warehouse:
+      permission: CAN_USE

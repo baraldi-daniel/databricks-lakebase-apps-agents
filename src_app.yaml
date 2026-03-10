@@ -1,0 +1,33 @@
+command:
+  - streamlit
+  - run
+  - app.py
+  - --server.port
+  - "8000"
+  - --server.address
+  - "0.0.0.0"
+
+env:
+  - name: DATABRICKS_HOST
+    value: "<YOUR_WORKSPACE_URL>"
+  - name: LAKEBASE_HOST
+    value: "<YOUR_LAKEBASE_HOST>"
+  - name: LAKEBASE_PG_USER
+    value: "cache_app"
+  - name: LAKEBASE_PG_PASSWORD
+    value: "<YOUR_PASSWORD>"
+  - name: DATABRICKS_APP_URL
+    value: "<YOUR_APP_URL>"
+  - name: APP_OWNER_EMAIL
+    value: "<YOUR_EMAIL>"
+  - name: DATABRICKS_SQL_WAREHOUSE_ID
+    value: "e5cdcc9f6056c833"
+  - name: UC_CATALOG
+    value: "baraldiworkspace_catalog"
+  - name: UC_SCHEMA
+    value: "llm_cache_app"
+
+resources:
+  - name: sql-warehouse
+    sql_warehouse:
+      permission: CAN_USE
