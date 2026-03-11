@@ -13,23 +13,8 @@ An AI-powered sales agent with two-tier semantic caching, configurable guardrail
 
 ## Architecture
 
-```
-User (Streamlit UI)
-    |
-    v
-[Semantic Cache] --hit--> Instant response (~1ms)
-    |
-    miss
-    |
-    v
-[LLM Agent + Tool Calling] ---> [Lakebase: products, sales]
-    |
-    v
-[Guardrail Eval (LLM Judge)] ---> [MLflow Evaluation Runs]
-    |
-    v
-Response to user
-```
+<img width="739" height="581" alt="image" src="https://github.com/user-attachments/assets/96ce4ae5-9364-4dfa-8ecd-75bc44d281fb" />
+
 
 ## Project Structure
 
